@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Blossom</title>
+</head>
+<body>
+	<div class="navbar navbar-dark bg-dark box-shadow">
+        <div class="container d-flex justify-content-between">
+          	<a href="#" class="navbar-brand d-flex align-items-center">
+            	<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+            	<strong>Blossom</strong>
+          	</a>
+          	<form action="/blossom/member/singup" method="get">
+    			<input type="submit" value="회원가입" class="btn btn-outline-secondary">
+			</form>
+			<form action="/blossom/member/login" method="get">
+    			<input type="submit" value="로그인" class="btn btn-outline-secondary">
+			</form>
+          		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            		<span class="navbar-toggler-icon"></span>
+          		</button>
+        </div>
+	</div>
+	<section class="jumbotron text-center">
+		<div class="container">
+          	<h1 class="jumbotron-heading">product board</h1>
+          	<p class="lead text-muted">선택의 폭을 경험하세요 - 다양한 제품으로 여러분을 기다립니다!</p>
+          	<p>
+            	<a href="#" class="btn btn-primary my-2">Main call to action</a>
+            	<a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          	</p>
+        </div>
+    </section>
+</body>
+</html>
