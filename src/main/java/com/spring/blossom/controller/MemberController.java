@@ -1,5 +1,8 @@
 package com.spring.blossom.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -59,11 +62,26 @@ public class MemberController {
 			session.setAttribute("memberLevel", memberLevel);
 			session.setAttribute("memberAddress", memberAddress);
 			session.setMaxInactiveInterval(1800);
-			return "redirect:";
-		} else {
+			logger.info(targetURL);
+			if (targetURL != null) {
+				return "redirect:" + targetURL;
+			} else {
+				return "redirect:/";
+			}
 			
+		} else {
+			if (targetURL != null) {
+				try {
+					targetURL = URLEncoder.encode(targetURL, "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					
+				}
+				return "redirect:/member/login?targetURL=" + targetURL;
+			} else {
+				reAttr.addFlashAttribute("loginResult", "fail");
+				return "redirect:/memeber/login";
+			}
 		}
-		return memberPw;
 		
 	} // end loginPOST
 	
