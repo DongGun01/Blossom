@@ -8,6 +8,11 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <meta charset="UTF-8">
 <title>Blossom</title>
+<style type="text/css">
+#dynamicText {
+	color : white;
+}
+</style>
 </head>
 <body>
 	<div class="navbar navbar-dark bg-dark box-shadow">
@@ -18,7 +23,7 @@
           	</a>
           	<c:if test="${empty memberNickname }">
           	<!-- 세션 정보가 없는 경우 (로그인 및 회원가입 버튼 표시 -->
-	          	<form action="/blossom/member/singup" method="get">
+	          	<form action="/blossom/member/username" method="get">
 	    			<input type="submit" value="회원가입" class="btn btn-outline-secondary">
 				</form>
 				<form action="/blossom/member/login" method="get">
@@ -27,7 +32,10 @@
 			</c:if>
 			<c:if test="${not empty memberNickname }">
 			<!-- 세션 정보가 있는 경우 (사용자 닉네임 표시) -->
-				<a>${memberNickname }&nbsp;님&nbsp;&nbsp;</a>
+				<p id="dynamicText">${memberNickname }&nbsp;님&nbsp;&nbsp;</p>
+				<form action="/blossom/member/singout" method="post">
+					<input type="submit" value="로그아웃" class="btn btn-outline-secondary">	
+				</form>
 			</c:if>
           		<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
             		<span class="navbar-toggler-icon"></span>
@@ -47,4 +55,5 @@
 </body>
 <script type="text/javascript">
 </script>
+
 </html>

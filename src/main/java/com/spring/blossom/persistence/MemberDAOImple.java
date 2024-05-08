@@ -38,4 +38,16 @@ public class MemberDAOImple implements MemberDAO {
 		return sqlSession.selectOne(NAMESPACE + ".login", args);
 	}
 
+	@Override
+	public int checkNickname(String memberNickname) {
+		logger.info("checkNickname : " + memberNickname);
+		return sqlSession.selectOne(NAMESPACE + ".select_by_nickname", memberNickname);
+	}
+
+	@Override
+	public int CheckId(String memberId) {
+		logger.info("checkId : " + memberId);
+		return sqlSession.selectOne(NAMESPACE + ".select_by_id", memberId);
+	}
+
 }

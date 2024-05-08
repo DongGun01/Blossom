@@ -16,15 +16,17 @@ public class MemberServiceImple implements MemberService {
 	private MemberDAO MemberDAO;
 	
 	@Override
-	public boolean idCheck(String memberId) {
-		
-		return false;
+	public int idCheck(String memberId) {
+		int result = MemberDAO.CheckId(memberId);
+		logger.info("service 아이디 중복체크 메소드 호출 memberId : " + memberId);
+		return result;
 	}
 
 	@Override
-	public boolean nicknameCheck(String memberNickname) {
-		// TODO Auto-generated method stub
-		return false;
+	public int nicknameCheck(String memberNickname) {
+		int result = MemberDAO.checkNickname(memberNickname);
+		logger.info("Service 닉네임 중복체크 메소드 호출 memberNickname : " + memberNickname);
+		return result;
 	}
 
 	@Override

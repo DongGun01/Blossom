@@ -34,9 +34,19 @@ public class MemberController {
 	// 회원 구매내역 + 결제수단 저장
 	// 회원 상품리뷰
 	
-	@GetMapping("/singup")
-	public void showSingUp() {
-		logger.info("회원가입 페이지를 보여줍니다.");
+	@GetMapping("/username")
+	public void userName() {
+		logger.info("회원가입 step1 page");
+	}
+	
+	@GetMapping("/usercontact")
+	public void userContact() {
+		logger.info("회원가입 step2 page");
+	}
+	
+	@GetMapping("/useraddress")
+	public void userAddress() {
+		logger.info("회원가입 step3 page");
 	}
 	
 	@GetMapping("/login")
